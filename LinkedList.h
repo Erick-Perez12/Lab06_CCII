@@ -28,8 +28,8 @@ class LinkedList {
         void pushBack(T);
         void pushFront(T);
         void insert_pos(T,int);
-        Iterator2<T> begin();
-        Iterator2<T> end();
+        Iterator2<T> Mybegin();
+        Iterator2<T> Myend();
         void print();
         void popBack();
         void popFront();
@@ -117,11 +117,11 @@ void LinkedList<T>::insert_pos(T value,int pos){
 }
 
 template<typename T>
-Iterator2<T> LinkedList<T>::begin(){
+Iterator2<T> LinkedList<T>::Mybegin(){
     return Iterator2<T>(head);
 }
 template <typename T>
-Iterator2<T> LinkedList<T>::end(){ 
+Iterator2<T> LinkedList<T>::Myend(){ 
     return Iterator2<T>(fin);
 }
 
