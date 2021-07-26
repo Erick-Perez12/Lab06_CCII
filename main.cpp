@@ -1,6 +1,7 @@
 #include <iostream>
 #include "LinkedList.h"
 #include "Node.h"
+#include <list>
 
 int main() {
     LinkedList<string> l1;
@@ -53,23 +54,43 @@ int main() {
     l4.delete_pos(3);
     cout<<l4<<endl;
 
-    for (Iterator2<string> it=l1.begin();it!=l1.end();it++){
+    for (Iterator2<string> it=l1.Mybegin();it!=l1.Myend();it++){
         std::cout<<"("<<*it<<")";
     }
     cout<<endl;
 
-    for (Iterator2<char> it=l2.begin();it!=l2.end();it++){
+    for (Iterator2<char> it=l2.Mybegin();it!=l2.Myend();it++){
     std::cout<<"("<<*it<<")";
     }
     cout<<endl;
 
-    for (Iterator2<int> it=l3.begin();it!=l3.end();it++){
+    for (Iterator2<int> it=l3.Mybegin();it!=l3.Myend();it++){
         std::cout<<"("<<*it<<")";
     }
     cout<<endl;
 
     LinkedList<int> l5 = l3;
     cout<<l5<<endl;
+	
+    list<int> l6{32,43,1};
+    l6.push_front(67);
+    l6.push_back(54);
+    l6.push_back(43);
+    l6.push_back(32);
+    l6.pop_back();
+
+    cout<<"L6 list:";
+    for(auto i=l6.begin();i!=l6.end();i++){
+        cout<<" "<<*i;
+    }
+    cout<<endl;
+    cout<<"L7 list:";
+    list<int>l7 = l6;
+    for(auto i=l7.begin();i!=l7.end();i++){
+        cout<<" "<<*i;
+    }
+    cout<<endl;
+
 
     /*LinkedList<int> l6;
     l6=std::move(l4);
