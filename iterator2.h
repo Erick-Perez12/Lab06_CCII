@@ -20,7 +20,7 @@ template <typename T>
 Iterator2<T> Iterator2<T>::operator++(int)
 {
     Iterator2 temp = *this;
-    Position = Pos->getNext();
+    Pos = Pos->getNext();
     return temp;
 }
 
